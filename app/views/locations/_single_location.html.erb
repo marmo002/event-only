@@ -1,8 +1,14 @@
 
 
 <div class="location">
-  <h3><%= location.name %></h3>
-  <h4>City: <%= location.city %></h4>
-  <%= location.description %><br/>
+  <%
+  relative_path = request.fullpath
+  if relative_path == locations_path %>
+    <h3><%= location.name %></h3>
+  <% end  %>
+
+
+  <h4>Located in: <%= location.city %></h4>
+  <p><%= location.description %></p>
   <%= link_to image_tag(location.image, class: "location"), location_path(location) %>
 </div>

@@ -1,0 +1,15 @@
+
+<%= form_for event do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>Select your date:
+    <span>
+      <%= f.date_select :date %>
+    </span>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>

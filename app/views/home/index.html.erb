@@ -1,7 +1,20 @@
 
-<p>
-  <%= link_to 'View Locations', locations_path %>
-</p>
-<p>
-  <%= link_to 'Events', events_path %>
-</p>
+<div class="locations">
+  <h2>Locations</h2>
+  <%= link_to "View All", locations_path %>
+    <ol>
+      <% @locations.each do |location| %>
+        <li><%= link_to location.name, location_path(location.id) %></li>
+      <% end %>
+    </ol>
+</div>
+
+<div class="events">
+  <h2>Events</h2>
+  <%= link_to "View All", events_path %>
+    <ol>
+      <% @events.each do |event| %>
+        <li><%= link_to event.name, event_path(event.id) %></li>
+      <% end %>
+    </ol>
+</div>
